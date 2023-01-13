@@ -1,0 +1,20 @@
+download-external-modules: true
+evaluate-variables: true
+external-modules-download-path: .external_modules
+framework: terraform
+output: json
+no-guide: false
+# Although the directory directive appears to accept a list of directories it actually only
+# processes the first directory defined in the list. As such, the directory directive
+# is commented out and checkov should be invoked with the --directory cli option in
+# order to define the appropriate template directory per invocation.
+directory:
+  - env/dev
+  - modules/api_gateway
+  - modules/kms
+  - modules/lambda
+  - modules/rds_with_proxy
+  - modules/sns
+  - modules/step_functions
+  - modules/vpc
+skip-check:
